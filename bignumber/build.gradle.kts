@@ -46,39 +46,27 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-            }
+        // Common
+        commonMain.dependencies {}
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.kotest.framework.engine)
+            implementation(libs.kotest.assertions.core)
+            implementation(libs.kotest.property)
         }
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(libs.kotest.framework.engine)
-                implementation(libs.kotest.assertions.core)
-                implementation(libs.kotest.property)
-            }
+
+        // Jvm
+        jvmMain.dependencies {}
+        jvmTest.dependencies {
+            implementation(libs.kotest.jvm.junit)
+            implementation(libs.mockk)
         }
-        val jvmMain by getting {
-            dependencies {
-                implementation(libs.kotlinx.reflect)
-            }
-        }
-        val jvmTest by getting {
-            dependencies {
-                implementation(libs.kotest.jvm.junit)
-                implementation(libs.mockk)
-            }
-        }
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.kotlinx.reflect)
-            }
-        }
-        val androidUnitTest by getting {
-            dependencies {
-                implementation(libs.kotest.jvm.junit)
-                implementation(libs.mockk)
-            }
+
+        // Android
+        androidMain.dependencies {}
+        androidUnitTest.dependencies {
+            implementation(libs.kotest.jvm.junit)
+            implementation(libs.mockk)
         }
     }
 }
