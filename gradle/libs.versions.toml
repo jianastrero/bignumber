@@ -1,0 +1,28 @@
+[versions]
+agp = "8.5.2"
+kotlin = "2.1.20"
+android-minSdk = "26"
+android-compileSdk = "35"
+kotest = "5.9.1"
+kover = "0.8.1"
+mockk = "1.14.2"
+mavenPublish = "0.31.0"
+
+[libraries]
+kotlinx-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+# Kotest
+kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+kotest-jvm-junit = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+
+# Mockk
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+[plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
