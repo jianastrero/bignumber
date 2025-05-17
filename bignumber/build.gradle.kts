@@ -17,7 +17,7 @@ kover {
         filters {
             excludes {
                 classes(
-                    "dev.jianastrero.main.*", // Exclude the main package from coverage
+                    "io.github.jianastrero.main.*", // Exclude the main package from coverage
                 )
             }
         }
