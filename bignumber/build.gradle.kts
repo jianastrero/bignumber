@@ -136,8 +136,8 @@ mavenPublishing {
     coordinates(group.toString(), artifactId, version.toString())
 
     pom {
-        name = "Jian Astrero's Utils"
-        description = "My own utility library for Kotlin Multiplatform projects"
+        name = "BigNumber"
+        description = "BigNumber library for Kotlin Multiplatform projects"
         inceptionYear = "2025"
         url = "https://github.com/jianastrero/bignumber"
         licenses {
